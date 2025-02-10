@@ -1,4 +1,4 @@
-# Reproducing an issue in ddtrace
+# error traces are not shown in datadog
 
 ## Prerequisites
 
@@ -18,4 +18,4 @@ uv run ddtrace-run fastapi run main.py
 
 Hit `http://localhost:8080/error`.
 
-Note that the traces from this endpoint are not shown in datadog.
+This creates an unprintable exception, which ddtrace fails to record as an erroneous trace. Both it and the parent trace are not shown in datadog.
